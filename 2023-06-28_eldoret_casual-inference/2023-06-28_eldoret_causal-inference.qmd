@@ -9,6 +9,7 @@ format:
     theme: [custom.scss]
     slide-number: c/t
     incremental: true
+    progress: true
     title-slide-attributes:
       data-background-image: img/title.png
       data-background-size: contain
@@ -63,7 +64,7 @@ Does this mean that coffee prevents death? The study authors say no. But also, m
 
 Does this mean that coffee prevents death? The study authors say no. But also, maybe!
 
-Step 1: Avoid the word “causal” and warn that correlation is not causation.
+[Step 1: Avoid the word “causal” and warn that correlation is not causation.]{style="color:rgba(178, 190, 181);"}
 
 **Step 2: Ignore the warning and make policy or health recommendations based on a causal interpretation of the findings.**
 
@@ -84,15 +85,41 @@ According to Hernán, the point is that we have to be clear about our scientific
 
 [B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;"}
 
-## What is our goal? What do we want to know?
+## To answer this question we need causal inference
 <br>
 
-[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;"}
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%; color:rgba(178, 190, 181);"}
 
 [B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
 
 
-# [Title]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+# [Causal Inference]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
 
-## Goal of Qualitative Inquiry
+## Causal Inference
+
+Causal inference is what we do when we identify and estimate the causal effect of some proposed cause on an outcome of interest.
+
+<center>
+![](img/causeeffect.png)
+</center>
+
+## Counterfactual Thinking
+
+[Causal inference is an exercise in counterfactual thinking, full of "what if" questions about the road not taken.]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
+
+A counterfactual is the hypothetical state of a "what if" question. With counterfactual thinking, there is what actually happened, and then there is the hypothetical counterfactual of what would have happened, counter to fact, under the alternative scenario. The difference between what did happen and what would have happened is a known as the causal effect.
+
+## {background-image="img/frost.png"}
+
+## The Road Not Taken
+
+> Two roads diverged in a yellow wood, and sorry I could not travel both and be one traveler…
+
+Robert has to choose one road; he can't take both simultaneously. Robert can either take the road more traveled, a decision we'll call 𝑋 = 0, or he can take the road less traveled, a decision we’ll call 𝑋 = 1.
+
+## {background-image="img/road less traveled 1.svg"}
+## {background-image="img/road less traveled 2.svg"}
+## {background-image="img/road less traveled 3.svg"}
+
+
 
