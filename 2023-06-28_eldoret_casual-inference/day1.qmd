@@ -1,0 +1,532 @@
+---
+title: "2023 Methods Training"
+subtitle: "Day 1: Qualitative and Observational Data Collection"
+author:
+  - Eric Green
+  - Eve Puffer
+format: 
+  revealjs:
+    multiplex: true
+    theme: [custom.scss]
+    slide-number: c/t
+    incremental: true
+    title-slide-attributes:
+      data-background-image: /img/title.png
+      data-background-size: contain
+      data-background-opacity: "1"
+---
+
+```{r, include=FALSE}
+library(countdown)
+```
+
+##  {background-image="img/FallMini2022-11.jpg"}
+
+## [tinyurl.com/avsiday1](https://tinyurl.com/avsiday1)
+
+![](img/amt1.png)
+
+## Today's Agenda
+
+::: columns
+::: {.column width="90%"}
+| Time      | Topic                        |
+|-----------|:-----------------------------|
+| 1:00-2:00 | Lunch 🥘                     |
+| 2:00-2:15 | Introduction                 |
+| 2:15-3:00 | Interviews         |
+| 3:00-3:15 | ☕️ Coffee/tea break          |
+| 3:15-4:00 | Focus groups                 |
+| 4:00-4:15 | ☕️ Coffee/tea break          |
+| 4:15-5:00 | Direct observational methods |
+
+:::
+:::
+
+## Previewing Tomorrow 👀
+
+::: columns
+::: {.column width="90%"}
+| Time      | Topic                                      |
+|-----------|:-------------------------------------------|
+| 1:00-2:00 | Lunch 🥘                                   |
+| 2:00-3:00 | Data visualization and thinking about data |
+| 3:00-3:15 | ☕️ Coffee/tea break                        |
+| 3:15-4:00 | Data Wrangling                             |
+| 4:00-4:15 | ☕️ Coffee/tea break                        |
+| 4:15-5:00 | Reproducible reporting                     |
+:::
+:::
+
+## Thursday 🤝
+
+Available for 1-on-1s or small group consultation
+
+# [Qualitative Methods]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #006db0, #008a2e)"}
+
+## Goal of Qualitative Inquiry
+
+<br>
+
+<center>[To gain a [**deep, contextual**]{style="background-color:rgba(6, 115, 177, 0.3)"} understanding of an issue from the perspective of those involved or affected]{style="font-size:200%;"}</center>
+
+## [Qual]{style="background-color:rgba(6, 115, 177, 0.3)"}itative [VS]{style="text-decoration: underline;"} [Quant]{style="background-color:rgba(0, 139, 47, 0.3)"}itative
+
+
+| Qualitative | Quantitative |
+|-------------|:-------------|
+| To describe variation | To quantify variation |
+| Prioritizes depth | (Often) prioritizes breadth |
+| Answers why/how | Answers how much/many |
+| To develop hypotheses | To test hypotheses |
+| Highly flexible | Often rigid, standardized |
+| Textual | Numeric |
+
+: {tbl-colwidths="[50,50]"}
+
+## [Qual]{style="background-color:rgba(6, 115, 177, 0.3)"}itative [AND]{style="text-decoration: underline;"} [Quant]{style="background-color:rgba(0, 139, 47, 0.3)"}itative
+
+
+| Order | Description |
+|-------------|:-------------|
+| Qual ︎➡️ Quant | Measure development then validation, hypothesis generation then testing (Exploratory Sequential) |
+| Quant ➡️ Qual | Collect qualitative data to better understand quantitative results (Explanatory Sequential) 
+| Quant 🔁 Qual | Collect and analyze both types of data simultaneously and look for convergence (Convergent) |
+
+: {tbl-colwidths="[30,70]"}
+
+## Methods
+
+| Method | Best For |
+|-------------|:-------------|
+| Interviews | Collecting personal narratives and perspectives, understanding sensitive topics |
+| Focus groups | Understanding group norms, competing perspectives | 
+| Participant observation | Observing naturally occurring behavior in context |
+
+: {tbl-colwidths="[30,70]"}
+
+# [Interviews]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #006db0, #008a2e)"}
+
+## Know Your Role
+
+* The interviewer is the student, and the person being interviewed is the expert
+* The goal is for the student to learn as much as the expert is willing to share about a topic
+* The student poses open-ended questions, listens attentively, and probes to gain understanding
+
+## {background-image="img/christina-wocintechchat-com-LQ1t-8Ms5PY-unsplash.jpg"}
+
+<center>
+
+[**Key skills**]{style="font-size:200%;"}
+
+* [rapport building]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+* [emphasize other perspective]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+* [adapt to personality/state]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+* [active listening]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+
+</center>
+
+## Active Listening
+
+| Direct Probes | Indirect Probes |
+|-------------|:-------------|
+| Can you say more about that? | Verbal expressions: uh huh, ok, i see |
+| I'm not sure I understand. Can you explain? | Restatement: "So you are saying that…" |
+| Can you give me an example? | Reflection: "And that made you feel…" |
+| Why do you think..."? | Non-verbal gestures such as nodding |
+
+: {tbl-colwidths="[50,50]"}
+
+## Spot the Good Interview
+
+![](img/interview.png)
+
+## Hot Seat 🔥
+
+For me, not you. 
+
+I need a topic and a volunteer willing to be interviewed by yours truly. 
+
+**Audience:** Please listen and label each direct and indirect probe I use.
+
+## Hot Seat 🔥 Count the Probes
+
+| Direct Probes | Indirect Probes |
+|-------------|:-------------|
+| Can you say more about that? | Verbal expressions: uh huh, ok, i see |
+| I'm not sure I understand. Can you explain? | Restatement: "So you are saying that…" |
+| Can you give me an example? | Reflection: "And that made you feel…" |
+| Why do you think..."? | Non-verbal gestures such as nodding |
+
+: {tbl-colwidths="[50,50]"}
+
+## Your Turn 1
+
+Find a partner and interview your partner about [topic]. Don't take notes. After the timer expires, switch roles and topics.
+
+| Direct Probes | Indirect Probes |
+|-------------|:-------------|
+| Can you say more about that? | Verbal expressions: uh huh, ok, i see |
+| I'm not sure I understand. Can you explain? | Restatement: "So you are saying that…" |
+| Can you give me an example? | Reflection: "And that made you feel…" |
+| Why do you think..."? | Non-verbal gestures such as nodding |
+
+: {tbl-colwidths="[50,50]"}
+
+```{r}
+countdown(minutes = 4, seconds = 00, top = 0)
+```
+
+## Notetaking and Memoing
+
+::: columns
+::: {.column width="50%"}
+
+### [Notes]{style="color:#F4BA02"}
+
+* What you write *in* the moment
+* You need to take notes, even if you have permission to record an interview
+* Use shorthand, technology
+:::
+
+::: {.column width="50%"}
+
+### [Memos]{style="color:#F4BA02"}
+
+* What you write *after* the moment
+* Memos are data
+* Your observations, your questions
+:::
+:::
+
+
+## Example Memo {.scrollable}
+
+![](img/memo.png){height=1500}
+
+## Qualitative Data Analysis
+
+* Beyond today's scope, but look into software to assist with thematic coding, such as [NVIVO](https://lumivero.com/products/nvivo/){preview-link="true"}, [ATLAS.ti](https://atlasti.com/){preview-link="true"} and [Dedoose](https://www.dedoose.com/){preview-link="true"}
+* Can also use [R for text mining](https://gatesopenresearch.s3.eu-west-1.amazonaws.com/manuscripts/14107/dd817e20-3463-415f-bf6e-83cf3aae5243_12999_-_eric_green.pdf?doi=10.12688/gatesopenres.12999.1&numberOfBrowsableCollections=4&numberOfBrowsableInstitutionalCollections=0&numberOfBrowsableGateways=9){preview-link="true"}
+* Large language models like [chatGPT](https://chat.openai.com/) are poised to disrupt QDA. They won't replace the thinking analyst, but LLMs will quicky find patterns and themes and let analysts work more efficiently and focus on the parts that humans still do best
+
+## ☕️ Coffee/tea break
+
+![](img/amt1.png)
+
+[tinyurl.com/avsiday1](https://tinyurl.com/avsiday1)
+
+```{r}
+countdown(minutes = 15, seconds = 00)
+```
+
+# [Focus Groups]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #006db0, #008a2e)"}
+
+## Strengths of Each Method
+
+| Interviews | Focus Groups |
+|-------------|:-------------|
+| Obtain personal narratives | Identify group norms |
+| Good for sensitive topics | Get opinions about group norms |
+| In-depth exploration | Probe differences in perspectives |
+
+
+: {tbl-colwidths="[50,50]"}
+
+## You Need
+
+* Usually at least two facilitators: moderator and note taker
+* ~6-12 participants
+* Audio, maybe video recording
+* Demographic sheet with ID numbers linked to table top cards with the same ID numbers (for identifying speakers in your notes)
+* A private space
+* Ground rules and a flexible moderator who encourages wide participation
+
+## {background-image="img/hancindex.jpg"}
+
+<br>
+<br>
+<br>
+<br>
+<center>
+
+[**Many Formats**]{style="font-size:150%;color:white;"}
+
+* [group discussion]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+* [dial testing]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+* [photovoice]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+* [free listing/card sorting]{style="color: white; background-color:rgba(6, 115, 177, 0.6);font-size:120%"}
+
+</center>
+
+## 
+
+{{< video https://vimeo.com/11066260 width="100%" height="100%">}}
+
+## 
+
+![](img/flcs1.png)
+
+## 
+
+![](img/flcs2.png)
+
+## 
+
+![](img/flcs3.png)
+
+## 
+
+![](img/flcs4.png)
+
+## 
+
+![](img/flcs5.png)
+
+
+## 
+
+![](img/flcs6.png)
+
+## Your Turn 2
+
+Let's do a mini free listing and card sorting exercise to get a feel for the method.
+
+```{r}
+countdown(minutes = 5, seconds = 00)
+```
+
+
+## G2R Free Listing/Sorting
+
+* We conducted 8 focus groups with 38 randomly selected coaches and participants to elicit perspectives on [how coaches contribute to participant success]{style="color: white; background-color:rgba(6, 115, 177, 0.6)"}
+* In the free-listing portion, we asked discussion participants to list all of the characteristics of coaches—and facets of coaching—that they think are important, and the co-facilitator documented these ideas on individual index cards.
+* After free listing, the facilitator asked the group to sort the cards in order of importance. 
+
+## {background-image="img/g2r_flcs.png"}
+
+* [The 8 groups free-listed 137 cards, 17.1 cards per group on average.]{style="color: white; background-color:rgba(6, 115, 177, 0.8)"}
+* [We removed 26 duplicate cards within groups and then collapsed similar terms across groups for a total of 32 unique cover terms.]{style="color: white; background-color:rgba(6, 115, 177, 0.8)"}
+* [We then scored each cover term based on the rankings across groups and created the overall ranking by group type.]{style="color: white; background-color:rgba(6, 115, 177, 0.8)"}
+
+## Jump to Google Sheets
+
+## Qual to Quant
+
+![](img/flcs_scoring.png)
+
+## Group Analysis
+
+![](img/flcs_slope.png)
+
+## Created Survey Items
+
+![](img/flcs_survey.png)
+
+## ☕️ Coffee/tea break
+
+![](img/amt1.png)
+
+[tinyurl.com/avsiday1](https://tinyurl.com/avsiday1)
+
+```{r}
+countdown(minutes = 15, seconds = 00)
+```
+
+# [Direct Observation]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #006db0, #008a2e)"}
+
+## ⚠️ This Not Participant Observation
+
+Today we'll talk about direct observation which sounds similar to a third qualitative data collection method called participant observation.
+
+Participant observation is a time-consuming enthnographic technique where the goal is to learn the perspectives and behaviors of a target population through observation and interaction.
+
+The goal of [direct observation]{style="text-decoration: underline;"} is to [quantify or rate the observable behaviors]{style="color: white; background-color:rgba(6, 115, 177, 0.6);"} of a target population.
+
+## Observational Measures
+
+Often considered a "gold standard" measure of behavior because:
+
+(1) it reduces bias present in methods where someone reports on their own behavior; and 
+(2) allows for a more detailed understanding of how, when, and why a behavior occurs.
+
+## Observational Measures
+
+Can be used for: 
+
+* Descriptive research (to understand an issue)
+* **Intervention research** (to document the process and outcomes)
+  * How was the intervention delivered? (fidelity, competency) 
+  * What was the outcome of the intervention?
+
+# [How was the Intervention [Delivered]{style="color: white; background-color:rgba(6, 115, 177, 0.6);"}?]{style="color:white; font-size:125%;"} {background-color="#006db0"}
+
+## Fidelity
+
+**Key question:** Was the intervention delivered like it was designed/intended?^[Can ask for self-report, which is then not observational; having a separate observer is much more valid; a selection of sessions can be observed rather than all.]
+
+*Example:* Did coaches follow the manual?
+
+<center>
+![](img/fidelityex.png)
+</center>
+
+## Competency
+
+**Key question:** How skillfully did providers deliver the intervention?
+
+*Example:* Did coaches use effective strategies when doing the steps?
+
+Example measure: Competency rating tool
+
+In a survey, we can multiple choice questions to ask for ratings (e.g., Not at all, A Little, Very).
+
+In an [observational measure]{style="text-decoration: underline;"}, judgments are [based on watching/listening to delivery]{style="text-decoration: underline;"} (live or recorded). The measure tells you which behaviors to look and listen for. 
+
+## Your Turn 3
+
+**If you were observing a group coaching session, what would you be watching for to see if the coach was a skillful, effective coach?**
+
+*Ask yourself:* What should the coach be doing? HOW should the 
+coach be acting towards the participants? 
+
+In pairs, generate 3 behaviors you would watch for. Share with group to generate a list.
+
+```{r}
+countdown(minutes = 4, seconds = 00)
+```
+
+## Adaptation of Competency Tools for Coaching
+
+Clinical competency tools exist for psychosocial interventions, primarily interventions focused on mental health.^[See [EQUIP Platform](https://equipcompetency.org/en-gb){preview-link="true"} for some widely used tools.]
+
+We started a [draft competency tool for coaching](https://docs.google.com/document/d/1YrzEp0m-pu1l8_mnYeDZeBbG06FijQ5mDmp2cWj54eE/edit?usp=sharing){preview-link="true"}, adapting from existing competency tools. We can now tailor them further based on research results.
+
+##
+
+![](img/comp_item1.png)
+
+##
+
+![](img/comp_item2.png)
+
+
+##
+
+![](img/comp_item5.png)
+
+
+##
+
+![](img/comp_item9.png)
+
+
+# [What was the Outcome of the Intervention?]{style="color:white; font-size:125%;"} {background-color="#006db0"}
+
+## Direct Observation of Outcomes
+
+| Target | Example |
+|-------------|:-------------|
+| Individual Behavior | child’s classroom behavior (e.g., track how many times they talk without permission) |
+| Interactions | parent-child interactions, family interactions |
+
+: {tbl-colwidths="[30,70]"}
+
+## Direct Observation of Outcomes
+
+### Methods: 
+
+* **Naturalistic** (watching/recording in the natural environment, e.g., home or school)
+* **Structured, standardized activities** as part of an assessment
+  * Give participants a standardized prompt while watching or recording
+  * Count or describe specific behaviors
+
+## Example: Parent-Child Interactions
+
+**Setting:** Parenting intervention evaluation in Liberia
+
+**Setup:** A square on the ground using pieces of rope and locally-available materials that children commonly play with (rocks, paper, pencils/crayons, bottles, boxes). Tablets used to record 5-min video interaction. 
+
+**Prompt:** "Let child be free in the play and follow along with what your child wants to do."
+
+**Rated from recording:** (1) Level of Activity/Interaction, (2) Parent Praising the child, (3) Positive Child Reactions, (4) Child Verbalizations
+
+## Your Turn 4
+
+**What would you hypothesize are family relationship outcomes of G2R?** 
+
+::: {.nonincremental}
+* If you were watching the family interact after G2R, what would you be watching and listening for to see if that outcome was achieved?
+
+* What type of standardized activity or prompt could you ask them to do in order to assess whether the interaction outcome was achieved? 
+:::
+
+[Discuss in pairs; Share idea with group]
+
+```{r}
+countdown(minutes = 5, seconds = 00)
+```
+
+## Example: Family Interactions
+
+**Setting:** Family therapy intervention [evaluation](https://doi.org/10.1016/j.beth.2018.08.004){preview-link="true"} in Kenya
+
+::: {.nonincremental}
+Structured family activities (video recorded; 10 min each):
+
+* Hands-on problem-solving task ("house" building)
+* Family discussion prompt about hopes
+* Couples conflict discussion prompt
+
+We rated:
+
+* Global Codes across activities (e.g., positive behavior, negative behavior)
+* Activity-specific codes (e.g., ability to clarify a problem/hope, extent of reaching a solution)
+:::
+
+# [Thank You! 🙏]{style="color:white; font-size:125%;"} {background="linear-gradient(0deg, #006db0, #008a2e)"}
+
+## Resources
+
+FHI360, [*Qualitative Research Methods: A Data Collector's Field Guide*](https://www.fhi360.org/sites/default/files/media/documents/Qualitative%20Research%20Methods%20-%20A%20Data%20Collector's%20Field%20Guide.pdf)
+
+IDEO, [*Design Kit*](https://www.designkit.org/)
+
+IDEO, [*The Field Guide to Human-Centered Design*](https://www.designkit.org/resources/1.html)
+
+## Homework
+
+::: columns
+::: {.column width="33.3%"}
+
+<center>
+Sign up for a [Posit Cloud Free account](https://ghr.link/g2r-cloud) and join our workspace
+<br>
+
+![](img/posit.png)
+<br>
+ghr.link/g2r-cloud
+</center>
+:::
+
+::: {.column width="33.3%"}
+<center>
+Follow [these instructions](https://posit.co/download/rstudio-desktop/) to download/install R and RStudio
+
+![](img/rsd.png)
+<br>
+ghr.link/rsd
+</center>
+:::
+::: {.column width="33.3%"}
+<center>
+[Today's slide deck](https://tinyurl.com/avsiday1) 
+(gives you easy access to these links)
+
+
+![](img/amt1.png)
+<br>
+tinyurl.com/avsiday1
+</center>
+:::
+:::
