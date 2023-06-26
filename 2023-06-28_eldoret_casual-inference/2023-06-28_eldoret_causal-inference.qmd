@@ -85,6 +85,13 @@ According to Hernán, the point is that we have to be clear about our scientific
 
 [B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;"}
 
+## What is our goal? What do we want to know?
+<br>
+
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%; color:rgba(178, 190, 181);"}
+
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
+
 ## To answer this question we need causal inference
 <br>
 
@@ -109,18 +116,43 @@ Causal inference is what we do when we identify and estimate the causal effect o
 
 A counterfactual is the hypothetical state of a "what if" question. With counterfactual thinking, there is what actually happened, and then there is the hypothetical counterfactual of what would have happened, counter to fact, under the alternative scenario. The difference between what did happen and what would have happened is a known as the causal effect.
 
-## {background-image="img/frost.png"}
-
-## The Road Not Taken
-
-> Two roads diverged in a yellow wood, and sorry I could not travel both and be one traveler…
-
-Robert has to choose one road; he can't take both simultaneously. Robert can either take the road more traveled, a decision we'll call 𝑋 = 0, or he can take the road less traveled, a decision we’ll call 𝑋 = 1.
-
 ## {background-image="img/road less traveled 0.svg"}
 ## {background-image="img/road less traveled 1.svg"}
 ## {background-image="img/road less traveled 2.svg"}
 ## {background-image="img/road less traveled 3.svg"}
 
+## Avererage Treatment Effects
 
+We can't measure the causal impact of road choice for Robert as an individual (because we only observe one potential outcome), but we can compare groups of people like Robert who take one road or the other and estimate the average treatment effect, or ATE. 
 
+To see why this works, let's *pretend* that we know everyone's potential outcomes. 
+
+## {background-image="img/po.png"}
+
+## Back to Reality
+
+We're not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the road less traveled to people who take the road more traveled. But how do people come to take one road versus the other?
+
+## {background-image="img/po2.png"}
+
+## Randomization Neutralizes Selection Bias...
+
+Under perfect randomization, the estimated ATE 1.5 is equal to the true (but unknowable) ATE. But when travelers selected their own road, the estimate is 4.7. This does not line up with the true ATE because the estimate includes bias.
+
+## ...But Randomization is Not Always Possible or Maintained
+
+Most research is non-experimental, or what many would call observational. Selection bias will always be with us. Our only defense against being fooled by selection bias is research design and statistical adjustment. As [Cunningham (2020)](https://mixtape.scunning.com/) states:
+
+> One could argue that the entire enterprise of causal inference is about developing a reasonable strategy for negating the role that selection bias is playing in estimated causal effects.
+
+## Causal Inference Methods
+
+[Matthay et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/31890846/) divide non-experimental approaches to causal inference into two main buckets: confounder-control and instrument-based.[^others] 
+
+**Confounder-control** is characterized by the use of statistical adjustment to make groups more comparable.
+
+**Instrument-based studies**, sometimes called **quasi-experimental designs**, estimate treatment effects by finding and leveraging arbitrary reasons why some people are more likely to be treated or exposed.
+
+[^others]: You might also come across references to Bradford Hill's Considerations and the sufficient-component cause model.
+
+# [Causal Inference Methods]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}

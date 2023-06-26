@@ -415,6 +415,12 @@ Eric Green
 <p><span style="font-size:150%;">A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying</span></p>
 <p><span style="font-size:150%;">B. Whether drinking a cup of coffee daily lowers the risk of dying?</span></p>
 </section>
+<section id="what-is-our-goal-what-do-we-want-to-know-1" class="slide level2">
+<h2>What is our goal? What do we want to know?</h2>
+<p><br></p>
+<p><span style="font-size:150%; color:rgba(178, 190, 181);">A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying</span></p>
+<p><span style="font-size:150%; background-color:rgba(244, 186, 2);">B. Whether drinking a cup of coffee daily lowers the risk of dying?</span></p>
+</section>
 <section id="to-answer-this-question-we-need-causal-inference" class="slide level2">
 <h2>To answer this question we need causal inference</h2>
 <p><br></p>
@@ -438,31 +444,58 @@ Eric Green
 <p><span style="font-size:150%; background-color:rgba(244, 186, 2);">Causal inference is an exercise in counterfactual thinking, full of “what if” questions about the road not taken.</span></p>
 <p>A counterfactual is the hypothetical state of a “what if” question. With counterfactual thinking, there is what actually happened, and then there is the hypothetical counterfactual of what would have happened, counter to fact, under the alternative scenario. The difference between what did happen and what would have happened is a known as the causal effect.</p>
 </section>
-<section id="section-2" class="slide level2" data-background-image="img/frost.png">
+<section id="section-2" class="slide level2" data-background-image="img/road less traveled 0.svg">
 <h2></h2>
 </section>
-<section id="the-road-not-taken" class="slide level2">
-<h2>The Road Not Taken</h2>
+<section id="section-3" class="slide level2" data-background-image="img/road less traveled 1.svg">
+<h2></h2>
+</section>
+<section id="section-4" class="slide level2" data-background-image="img/road less traveled 2.svg">
+<h2></h2>
+</section>
+<section id="section-5" class="slide level2" data-background-image="img/road less traveled 3.svg">
+<h2></h2>
+</section>
+<section id="avererage-treatment-effects" class="slide level2">
+<h2>Avererage Treatment Effects</h2>
+<p>We can’t measure the causal impact of road choice for Robert as an individual (because we only observe one potential outcome), but we can compare groups of people like Robert who take one road or the other and estimate the average treatment effect, or ATE.</p>
+<p>To see why this works, let’s <em>pretend</em> that we know everyone’s potential outcomes.</p>
+</section>
+<section id="section-6" class="slide level2" data-background-image="img/po.png">
+<h2></h2>
+</section>
+<section id="back-to-reality" class="slide level2">
+<h2>Back to Reality</h2>
+<p>We’re not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the road less traveled to people who take the road more traveled. But how do people come to take one road versus the other?</p>
+</section>
+<section id="section-7" class="slide level2" data-background-image="img/po2.png">
+<h2></h2>
+</section>
+<section id="randomization-neutralizes-selection-bias" class="slide level2">
+<h2>Randomization Neutralizes Selection Bias…</h2>
+<p>Under perfect randomization, the estimated ATE 1.5 is equal to the true (but unknowable) ATE. But when travelers selected their own road, the estimate is 4.7. This does not line up with the true ATE because the estimate includes bias.</p>
+</section>
+<section id="but-randomization-is-not-always-possible-or-maintained" class="slide level2">
+<h2>…But Randomization is Not Always Possible or Maintained</h2>
+<p>Most research is non-experimental, or what many would call observational. Selection bias will always be with us. Our only defense against being fooled by selection bias is research design and statistical adjustment. As <a href="https://mixtape.scunning.com/">Cunningham (2020)</a> states:</p>
 <blockquote>
-<p>Two roads diverged in a yellow wood, and sorry I could not travel both and be one traveler…</p>
+<p>One could argue that the entire enterprise of causal inference is about developing a reasonable strategy for negating the role that selection bias is playing in estimated causal effects.</p>
 </blockquote>
-<p>Robert has to choose one road; he can’t take both simultaneously. Robert can either take the road more traveled, a decision we’ll call 𝑋 = 0, or he can take the road less traveled, a decision we’ll call 𝑋 = 1.</p>
 </section>
-<section id="section-3" class="slide level2" data-background-image="img/road less traveled 0.svg">
-<h2></h2>
-</section>
-<section id="section-4" class="slide level2" data-background-image="img/road less traveled 1.svg">
-<h2></h2>
-</section>
-<section id="section-5" class="slide level2" data-background-image="img/road less traveled 2.svg">
-<h2></h2>
-</section>
-<section id="section-6" class="slide level2" data-background-image="img/road less traveled 3.svg">
-<h2></h2>
+<section id="causal-inference-methods" class="slide level2">
+<h2>Causal Inference Methods</h2>
+<p><a href="https://pubmed.ncbi.nlm.nih.gov/31890846/">Matthay et al.&nbsp;(2020)</a> divide non-experimental approaches to causal inference into two main buckets: confounder-control and instrument-based.<sup>1</sup></p>
+<p><strong>Confounder-control</strong> is characterized by the use of statistical adjustment to make groups more comparable.</p>
+<p><strong>Instrument-based studies</strong>, sometimes called <strong>quasi-experimental designs</strong>, estimate treatment effects by finding and leveraging arbitrary reasons why some people are more likely to be treated or exposed.</p>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>You might also come across references to Bradford Hill’s Considerations and the sufficient-component cause model.</p></li></ol></aside></section></section>
+<section id="causal-inference-methods-1" class="title-slide slide level1 center" data-background="linear-gradient(0deg, #00529b, #1f9ac9)">
+<h1><span style="color:white; font-size:200%;">Causal Inference Methods</span></h1>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
+
+
     </div>
   </div>
 
