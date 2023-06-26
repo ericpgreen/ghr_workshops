@@ -21,23 +21,15 @@ library(countdown)
 
 ##  {background-image="img/FallMini2022-11.jpg"}
 
-## [tinyurl.com/avsiday1](https://tinyurl.com/avsiday1)
-
-![](img/amt1.png)
-
 ## Today's Agenda
 
 ::: columns
 ::: {.column width="90%"}
-| Time      | Topic                        |
-|-----------|:-----------------------------|
-| 10:00-2:00 | Lunch 🥘                     |
-| 2:00-2:15 | Introduction                 |
-| 2:15-3:00 | Interviews         |
-| 3:00-3:15 | ☕️ Coffee/tea break          |
-| 3:15-4:00 | Focus groups                 |
-| 4:00-4:15 | ☕️ Coffee/tea break          |
-| 4:15-5:00 | Direct observational methods |
+| Time        | Topic                             |
+|-------------|:----------------------------------|
+| 10:00-11:00 | The challenge of causal inference |
+| 10:00-11:15 | ☕️ Coffee/tea break               |
+| 11:15-12:00 | DAGs.                             |
 
 :::
 :::
