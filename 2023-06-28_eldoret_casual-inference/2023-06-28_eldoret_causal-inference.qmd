@@ -29,7 +29,7 @@ library(countdown)
 |-------------|:----------------------------------|
 | 10:00-11:00 | The challenge of causal inference |
 | 10:00-11:15 | ☕️ Coffee/tea break               |
-| 11:15-12:00 | DAGs.                             |
+| 11:15-12:00 | DAGs                              |
 
 :::
 :::
@@ -37,9 +37,11 @@ library(countdown)
 
 ## Thursday and Friday 🤝
 
-Available for 1-on-1s or small group consultation
+Available for 1-on-1s or small group consultation. Sign-up for a slot at [ghr.link/meeting-eld23](https://ghr.link/meeting-eld23)
 
-# [Title]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #006db0, #008a2e)"}
+![](img/QR_meeting.png)
+
+# [Title]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
 
 ## Goal of Qualitative Inquiry
 
