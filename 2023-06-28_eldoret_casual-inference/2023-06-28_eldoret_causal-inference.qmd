@@ -117,6 +117,7 @@ A counterfactual is the hypothetical state of a "what if" question. With counter
 
 Robert has to choose one road; he can't take both simultaneously. Robert can either take the road more traveled, a decision we'll call 𝑋 = 0, or he can take the road less traveled, a decision we’ll call 𝑋 = 1.
 
+## {background-image="img/road less traveled 0.svg"}
 ## {background-image="img/road less traveled 1.svg"}
 ## {background-image="img/road less traveled 2.svg"}
 ## {background-image="img/road less traveled 3.svg"}
