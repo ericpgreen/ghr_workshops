@@ -41,6 +41,61 @@ Available for 1-on-1s or small group consultation. Sign-up for a slot at [ghr.li
 
 ![](img/QR_meeting.png)
 
+##  {background-image="img/coffee.png"}
+
+## Observational Findings
+
+[Ding et al. (2015)](https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.115.017341) conducted a pooled analysis of three large prospective cohort studies of health professionals in the U.S. (95% white) followed for up to 36 years:
+
+> Higher consumption of total coffee, caffeinated coffee, and decaffeinated coffee was associated with lower risk of total mortality…Relative to no consumption of coffee, the pooled hazard ratio for death was 0.95 (95% confidence interval [CI], 0.91–0.99) for 1.0 or less cup of total coffee per day.
+
+In other words, the sort of people who drink a cup of coffee daily have a 5% lower risk of dying over 2 to 3 decades. 
+
+## Causal Deniability
+
+Does this mean that coffee prevents death? The study authors say no. But also, maybe!
+
+**Step 1: Avoid the word “causal” and warn that correlation is not causation.**
+
+> …given the observational nature of the study design, we could not directly establish a cause-effect relationship between coffee and mortality.
+
+## Causal Deniability
+
+Does this mean that coffee prevents death? The study authors say no. But also, maybe!
+
+Step 1: Avoid the word “causal” and warn that correlation is not causation.
+
+**Step 2: Ignore the warning and make policy or health recommendations based on a causal interpretation of the findings.**
+
+> …coffee consumption can be incorporated into a healthy lifestyle…moderate consumption of coffee may confer health benefits in terms of reducing premature death.
+
+## So which is it, a non-causal association or a causal effect? 
+
+Hernán (2018) argues that scientists need to stop the charade:
+
+> We need to stop treating "causal" as a dirty word that respectable investigators do not say in public or put in print. It is true that observational studies cannot definitely prove causation, but this statement misses the point…
+
+According to Hernán, the point is that we have to be clear about our scientific goals and use language that reflects these goals. 
+
+## What do we want to know?
+<br>
+
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;"}
+
+<br>
+
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;"}
+
+## What do we want to know?
+<br>
+
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;"}
+
+<br>
+
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
+
+
 # [Title]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
 
 ## Goal of Qualitative Inquiry
