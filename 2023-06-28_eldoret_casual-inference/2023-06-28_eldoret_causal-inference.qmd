@@ -71,27 +71,23 @@ Step 1: Avoid the word “causal” and warn that correlation is not causation.
 
 ## So which is it, a non-causal association or a causal effect? 
 
-Hernán (2018) argues that scientists need to stop the charade:
+[Hernán (2018)](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304337) argues that scientists need to stop the charade:
 
 > We need to stop treating "causal" as a dirty word that respectable investigators do not say in public or put in print. It is true that observational studies cannot definitely prove causation, but this statement misses the point…
 
 According to Hernán, the point is that we have to be clear about our scientific goals and use language that reflects these goals. 
 
-## What do we want to know?
+## What is our goal? What do we want to know?
 <br>
 
 [A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;"}
-
-<br>
 
 [B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;"}
 
-## What do we want to know?
+## What is our goal? What do we want to know?
 <br>
 
 [A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;"}
-
-<br>
 
 [B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
 
