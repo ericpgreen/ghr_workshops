@@ -480,21 +480,18 @@ list(
 
 ## Recommended Reading {.nonincremental}
 
-* Scott Cunningham's ["Causal Inference: The Mixtape"](ghr.link/cun)
-* Nick Huntington-Klein's ["The Effect: An Introduction to Research Design and Causality"](ghr.link/eff)
-* Richard McElreath's ["Statistical Rethinking"](ghr.link/sre)
-* Morgan and Winship's ["Counterfactuals and Causal Inference: Methods and Principles for Social Research"](ghr.link/mor)
-* Hernán and Robins', ["Causal Inference: What If"](ghr.link/wha)
-* Daniel Westreich's, ["Epidemiology by Design"](ghr.link/wes)
-
-## Thursday and Friday 🤝
-
-Available for 1-on-1s or small group consultation. Sign-up for a slot at [ghr.link/meeting-eld23](https://ghr.link/meeting-eld23)
-
-![](img/QR_meeting.png)
+- Scott Cunningham's ["Causal Inference: The Mixtape"](ghr.link/cun)
+- Nick Huntington-Klein's ["The Effect: An Introduction to Research Design and Causality"](ghr.link/eff)
+- Richard McElreath's ["Statistical Rethinking"](ghr.link/sre)
+- Morgan and Winship's ["Counterfactuals and Causal Inference: Methods and Principles for Social Research"](ghr.link/mor)
+- Hernán and Robins', ["Causal Inference: What If"](ghr.link/wha)
+- Daniel Westreich's, ["Epidemiology by Design"](ghr.link/wes)
+- [My chapter](https://ghr.link/ci)
 
 ## Slides and Code
 
-Slides: https://ghr.link/ws-eld23-ci
+Available for 1-on-1s or small group consultation June 29-30. Sign-up for a slot at [ghr.link/meeting-eld23](https://ghr.link/meeting-eld23)
 
-Code: https://github.com/ericpgreen/ghr_workshops
+Slides: [ghr.link/ws-eld23-ci](https://ghr.link/ws-eld23-ci)
+
+Code: [https://github.com/ericpgreen/ghr_workshops](https://github.com/ericpgreen/ghr_workshops)
