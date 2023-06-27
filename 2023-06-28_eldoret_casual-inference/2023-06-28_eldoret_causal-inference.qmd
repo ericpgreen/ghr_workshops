@@ -31,9 +31,10 @@ library(countdown)
 ::: {.column width="90%"}
 | Time        | Topic                             |
 |-------------|:----------------------------------|
-| 10:00-11:00 | The challenge of causal inference |
-| 10:00-11:15 | ☕️ Coffee/tea break               |
-| 11:15-12:00 | DAGs                              |
+| 10:00-10:30 | The challenge of causal inference |
+| 10:30-11:00 | Confounder control and causal diagrams |
+| 11:00-11:10 | ☕️ Coffee/tea break               |
+| 11:10-12:00 | Malaria DAG                       |
 
 :::
 :::
@@ -171,8 +172,6 @@ Most research is non-experimental, or what many would call observational. Select
 
 [^others]: You might also come across references to Bradford Hill's Considerations and the sufficient-component cause model.
 
-## ☕️ Coffee/tea break
-
 # [Causal Diagrams and Confounder Control]{style="color:white; font-size:150%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
 
 ## {background-image="img/road less traveled 5.svg"}
@@ -217,3 +216,8 @@ countdown(minutes = 1, seconds = 00, bottom = 0)
 ## {background-image="img/road less traveled 17.svg"}
 ## {background-image="img/road less traveled 18.svg"}
 
+## ☕️ Coffee/tea break
+
+```{r}
+countdown(minutes = 10, seconds = 00, bottom = 0)
+```
