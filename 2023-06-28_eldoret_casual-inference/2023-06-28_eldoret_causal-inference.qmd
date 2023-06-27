@@ -16,7 +16,9 @@ format:
       data-background-opacity: "1"
 ---
 
-```{r, include=FALSE}
+```{r}
+#| include: false
+
 library(countdown)
 
 # image slides
@@ -60,7 +62,7 @@ In other words, the sort of people who drink a cup of coffee daily have a 5% low
 
 Does this mean that coffee prevents death? The study authors say no. But also, maybe!
 
-**Step 1: Avoid the word “causal” and warn that correlation is not causation.**
+**Step 1: Avoid the word "causal" and warn that correlation is not causation.**
 
 > …given the observational nature of the study design, we could not directly establish a cause-effect relationship between coffee and mortality.
 
@@ -76,6 +78,8 @@ Does this mean that coffee prevents death? The study authors say no. But also, m
 
 
 ```{r}
+#| echo: false
+
 countdown(minutes = 1, seconds = 00, top = 0)
 ```
 
@@ -140,6 +144,8 @@ We're not all knowing, of course, and we only get to observe one potential outco
 
 
 ```{r}
+#| echo: false
+
 countdown(minutes = 1, seconds = 00, bottom = 0)
 ```
 
@@ -192,6 +198,8 @@ As Pearl and Mackenzie tell us in the [*Book of Why*](https://amzn.to/3CKyjnP), 
 ## {background-image="img/road less traveled 12.svg"}
 
 ```{r}
+#| echo: false
+
 countdown(minutes = 2, seconds = 00, top = 0, left = 1)
 ```
 
@@ -202,6 +210,8 @@ countdown(minutes = 2, seconds = 00, top = 0, left = 1)
 Next we need to determine which paths are good and which are bad ([Huntington-Klein, 2021](https://theeffectbook.net/)). "Good paths" identify our research question. "Bad paths" are the alternate explanations for the causal effect that we need to close. In our example DAG, as in many DAGS, good paths often start with an arrow exiting the proposed cause and bad paths have arrows entering the proposed cause.
 
 ```{r}
+#| echo: false
+
 countdown(minutes = 1, seconds = 00, bottom = 0)
 ```
 
@@ -219,5 +229,272 @@ countdown(minutes = 1, seconds = 00, bottom = 0)
 ## ☕️ Coffee/tea break
 
 ```{r}
+#| echo: false
+
 countdown(minutes = 10, seconds = 00, bottom = 0)
 ```
+
+# [Malaria Example]{style="color:white; font-size:150%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+
+## Draw a DAG with a Partner
+
+The research question is: 
+
+[Does using a mosquito net decrease an individual's risk of contracting malaria?]{style="font-size:150%; background-color:rgba(244, 186, 2);"} 
+
+Imagine that you can collect data on environmental factors, individual health, and household characteristics, but you cannot randomly assign households to receive or use mosquito nets. You have to answer this question with an observational study.[^ex]
+
+What is in your DAG?
+
+[^ex]: This really nice example comes from [Andrew Heiss](https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example). 
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3, seconds = 00, bottom = 0)
+```
+
+## {background-image="img/road less traveled 19.svg"}
+## {background-image="img/road less traveled 20.svg"}
+## {background-image="img/road less traveled 21.svg"}
+
+## List the Pathways {background-color="white"}
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+<center>
+![](img/malariadag.png)
+</center>
+:::
+
+::: {.column width="40%"}
+There is a direct path between mosquito net use and the risk of malaria, but the effect is not causally identified due to several other open paths. List all of the paths and find which open paths have arrows pointing backwards into the mosquito net node.
+:::
+
+::::
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3, seconds = 00, top = 0)
+```
+
+## Two Shortcuts
+
+Drawing DAGs by hand is a good learning exercise, but there is an easier way:
+
+1. Draw your DAG on [DAGitty.net](http://dagitty.net/m1k_2Mk)
+2. Copy the code
+3. Paste the code into R
+4. In R use the {`dagitty`} package to analyze your DAG
+
+## {background-image="img/dagitty.png"}
+
+## {background-iframe="http://dagitty.net/m1k_2Mk"}
+
+## Paste Code into R
+
+::: {.panel-tabset}
+
+### Code
+
+```{r}
+#| label: dag1
+#| echo: true
+#| eval: false
+
+# Load packages
+library(dagitty)   
+
+# 'content between quotes' pasted from DAGitty.net
+mosquito_dag <- dagitty('dag {
+  bb="0,0,1,1"
+  "eligible for program" [pos="0.303,0.552"]
+  "household size" [pos="0.222,0.393"]
+  "insecticide resistance" [pos="0.623,0.251"]
+  "mosquito net" [exposure,pos="0.338,0.393"]
+  "nighttime temps" [pos="0.471,0.273"]
+  "risk of malaria" [outcome,pos="0.616,0.396"]
+  health [pos="0.469,0.493"]
+  income [pos="0.473,0.697"]
+  "eligible for program" -> "mosquito net"
+  "household size" -> "eligible for program"
+  "household size" -> "mosquito net"
+  "insecticide resistance" -> "risk of malaria"
+  "mosquito net" -> "risk of malaria"
+  "nighttime temps" -> "mosquito net"
+  "nighttime temps" -> "risk of malaria"
+  health -> "mosquito net"
+  health -> "risk of malaria"
+  income -> "eligible for program"
+  income -> "mosquito net"
+  income -> "risk of malaria"
+  income -> health
+  }'
+)
+
+plot(mosquito_dag)
+```
+
+### Plot
+
+```{r}
+#| label: dag2
+#| echo: false
+#| ref.label: "dag1"
+```
+
+:::
+
+## Identify Open Paths
+
+[Heiss demonstrates](https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example) how to use {`dagitty`} package to test assumptions, list pathways, and identify the minimal adjustment sets.
+
+```{r}
+#| label: paths
+#| echo: true
+#| eval: true
+
+paths(mosquito_dag)
+```
+
+## Identify Minimal Adjustment Set
+<br>
+
+```{r}
+#| label: adjustment
+#| echo: true
+#| eval: true
+
+adjustmentSets(mosquito_dag)
+```
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+This tells us that we only need to control for `health`, `income`, and `nighttime temps` to identify our causal effect of interest (`nets -> malaria risk`). We see the same on [DAGitty.net](http://dagitty.net/m1k_2Mk).
+:::
+
+::: {.column width="40%"}
+<center>
+![](img/adjustmentset.png)
+</center>
+:::
+
+::::
+
+## {background-image="img/road less traveled 22.svg"}
+
+## Simulated Data
+
+[Heiss simulated data](https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example) from 1,752 households to show that mosquito nets cause a reduction in malaria risk of 10 points.
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+  
+  library(tidyverse)
+  mosquito_nets <- read_csv("mosquito_nets.csv")
+  mosquito_nets
+```
+
+## Naive vs Adjusted
+
+::: {.panel-tabset}
+
+### Model
+
+```{r}
+#| label: malaria1
+#| echo: true
+#| eval: true
+#| results: hide
+
+library(modelsummary)
+library(gt)
+
+model_naive <- lm(malaria_risk ~ net, data = mosquito_nets)
+
+model_adjusted <- lm(malaria_risk ~ net + income + temperature + health,
+                     data = mosquito_nets)
+
+# Heiss's appropriate warning:
+# Making confounding adjustments with linear regression will result in properly identified causal relationships only under very specific circumstances.
+# See https://www.andrewheiss.com/research/chapters/heiss-causal-inference-2021/10-causal-inference.pdf
+```
+
+### Results
+
+```{r}
+#| label: malaria2
+#| echo: false
+
+list(
+  "naive" = model_naive,
+  "adjusted" = model_adjusted
+) %>%
+  modelplot(draw = FALSE, coef_omit = 'Interc|income|temperature|health') %>%
+  ggplot(aes(
+      y = term, x = estimate,
+      xmin = conf.low, xmax = conf.high,
+      color = model,
+      label = model)) +
+    geom_point(aes(y = term,
+                   x = estimate), 
+               position = position_dodge(width = 0.5),
+               size=2) +
+    geom_pointrange(aes(y = term,
+                        x = estimate, xmin = conf.low, xmax = conf.high, 
+                        color = model), position = position_dodge(width = 0.5),
+                    size=2) +
+    geom_label(hjust="center", vjust=-1,
+               position = position_dodge(width = 0.5),
+               size=6) +
+    geom_vline(xintercept = -10) +
+    xlim(-20, 0) +
+    annotate("text", x = -10, y = 1, 
+             label = "Simulated effect",
+             hjust = -0.05,
+             size=8) + 
+    theme_minimal(base_size = 23) +
+    theme(legend.position = "none",
+          axis.text.y = element_blank(),
+          plot.title = element_text(face="bold"),
+          panel.background = element_rect(fill="#fcfbf9"),
+          plot.background = element_rect(fill="#fcfbf9",
+                                          color=NA)) +
+    labs(title = "The naive estimate fails to recover the effect",
+         subtitle = "Simulated ATE: -10",
+         x = "Effect on malaria risk: Estimated ATE and 95% confidence intervals",
+         y = NULL)
+```
+
+:::
+
+
+## Recommended Reading {.nonincremental}
+
+* Scott Cunningham's ["Causal Inference: The Mixtape"](ghr.link/cun)
+* Nick Huntington-Klein's ["The Effect: An Introduction to Research Design and Causality"](ghr.link/eff)
+* Richard McElreath's ["Statistical Rethinking"](ghr.link/sre)
+* Morgan and Winship's ["Counterfactuals and Causal Inference: Methods and Principles for Social Research"](ghr.link/mor)
+* Hernán and Robins', ["Causal Inference: What If"](ghr.link/wha)
+* Daniel Westreich's, ["Epidemiology by Design"](ghr.link/wes)
+
+## Thursday and Friday 🤝
+
+Available for 1-on-1s or small group consultation. Sign-up for a slot at [ghr.link/meeting-eld23](https://ghr.link/meeting-eld23)
+
+![](img/QR_meeting.png)
+
+## Slides and Code
+
+Slides: https://ghr.link/ws-eld23-ci
+
+Code: https://github.com/ericpgreen/ghr_workshops

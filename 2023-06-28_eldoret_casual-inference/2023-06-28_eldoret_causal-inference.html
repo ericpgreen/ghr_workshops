@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="2023-06-28_eldoret_causal-inference_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="2023-06-28_eldoret_causal-inference_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -408,7 +472,7 @@ Eric Green
 </blockquote>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_97634e06" data-update-every="1" tabindex="0" style="top:0;right:0;">
+<div class="countdown" id="timer_9ba87358" data-update-every="1" tabindex="0" style="top:0;right:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -481,7 +545,7 @@ Eric Green
 <p>We’re not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the road less traveled to people who take the road more traveled. But how do people come to take one road versus the other?</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7299ca42" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_380559a3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -553,7 +617,7 @@ Eric Green
 <h2></h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4f30e58b" data-update-every="1" tabindex="0" style="top:0;left:1;">
+<div class="countdown" id="timer_15cb69f2" data-update-every="1" tabindex="0" style="top:0;left:1;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -568,7 +632,7 @@ Eric Green
 <p>Next we need to determine which paths are good and which are bad (<a href="https://theeffectbook.net/">Huntington-Klein, 2021</a>). “Good paths” identify our research question. “Bad paths” are the alternate explanations for the causal effect that we need to close. In our example DAG, as in many DAGS, good paths often start with an arrow exiting the proposed cause and bad paths have arrows entering the proposed cause.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_231ea229" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_7a86e305" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -600,12 +664,247 @@ Eric Green
 <h2>☕️ Coffee/tea break</h2>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_d813d7a8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_d9b44a40" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="malaria-example" class="title-slide slide level1 center" data-background="linear-gradient(0deg, #00529b, #1f9ac9)">
+<h1><span style="color:white; font-size:150%;">Malaria Example</span></h1>
+
+</section>
+<section id="draw-a-dag-with-a-partner" class="slide level2">
+<h2>Draw a DAG with a Partner</h2>
+<p>The research question is:</p>
+<p><span style="font-size:150%; background-color:rgba(244, 186, 2);">Does using a mosquito net decrease an individual’s risk of contracting malaria?</span></p>
+<p>Imagine that you can collect data on environmental factors, individual health, and household characteristics, but you cannot randomly assign households to receive or use mosquito nets. You have to answer this question with an observational study.<sup>1</sup></p>
+<p>What is in your DAG?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_6d9e1038" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside><ol class="aside-footnotes"><li id="fn2"><p>This really nice example comes from <a href="https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example">Andrew Heiss</a>.</p></li></ol></aside></section>
+<section id="section-24" class="slide level2" data-background-image="img/road less traveled 19.svg">
+<h2></h2>
+</section>
+<section id="section-25" class="slide level2" data-background-image="img/road less traveled 20.svg">
+<h2></h2>
+</section>
+<section id="section-26" class="slide level2" data-background-image="img/road less traveled 21.svg">
+<h2></h2>
+</section>
+<section id="list-the-pathways" class="slide level2" data-background-color="white">
+<h2>List the Pathways</h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<center>
+<img data-src="img/malariadag.png">
+</center>
+</div><div class="column" style="width:40%;">
+<p>There is a direct path between mosquito net use and the risk of malaria, but the effect is not causally identified due to several other open paths. List all of the paths and find which open paths have arrows pointing backwards into the mosquito net node.</p>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_10dfc556" data-update-every="1" tabindex="0" style="top:0;right:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="two-shortcuts" class="slide level2">
+<h2>Two Shortcuts</h2>
+<p>Drawing DAGs by hand is a good learning exercise, but there is an easier way:</p>
+<ol type="1">
+<li class="fragment">Draw your DAG on <a href="http://dagitty.net/m1k_2Mk">DAGitty.net</a></li>
+<li class="fragment">Copy the code</li>
+<li class="fragment">Paste the code into R</li>
+<li class="fragment">In R use the {<code>dagitty</code>} package to analyze your DAG</li>
+</ol>
+</section>
+<section id="section-27" class="slide level2" data-background-image="img/dagitty.png">
+<h2></h2>
+</section>
+<section id="section-28" class="slide level2" data-background-iframe="http://dagitty.net/m1k_2Mk">
+<h2></h2>
+</section>
+<section id="paste-code-into-r" class="slide level2">
+<h2>Paste Code into R</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Code</a></li><li><a href="#tabset-1-2">Plot</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># Load packages</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(dagitty)   </span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="co"># 'content between quotes' pasted from DAGitty.net</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>mosquito_dag <span class="ot">&lt;-</span> <span class="fu">dagitty</span>(<span class="st">'dag {</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  bb="0,0,1,1"</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  "eligible for program" [pos="0.303,0.552"]</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  "household size" [pos="0.222,0.393"]</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="st">  "insecticide resistance" [pos="0.623,0.251"]</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="st">  "mosquito net" [exposure,pos="0.338,0.393"]</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="st">  "nighttime temps" [pos="0.471,0.273"]</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  "risk of malaria" [outcome,pos="0.616,0.396"]</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="st">  health [pos="0.469,0.493"]</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a><span class="st">  income [pos="0.473,0.697"]</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a><span class="st">  "eligible for program" -&gt; "mosquito net"</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a><span class="st">  "household size" -&gt; "eligible for program"</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="st">  "household size" -&gt; "mosquito net"</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a><span class="st">  "insecticide resistance" -&gt; "risk of malaria"</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a><span class="st">  "mosquito net" -&gt; "risk of malaria"</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a><span class="st">  "nighttime temps" -&gt; "mosquito net"</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a><span class="st">  "nighttime temps" -&gt; "risk of malaria"</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a><span class="st">  health -&gt; "mosquito net"</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a><span class="st">  health -&gt; "risk of malaria"</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a><span class="st">  income -&gt; "eligible for program"</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a><span class="st">  income -&gt; "mosquito net"</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a><span class="st">  income -&gt; "risk of malaria"</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="st">  income -&gt; health</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a><span class="st">  }'</span></span>
+<span id="cb1-29"><a href="#cb1-29"></a>)</span>
+<span id="cb1-30"><a href="#cb1-30"></a></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="fu">plot</span>(mosquito_dag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="2023-06-28_eldoret_causal-inference_files/figure-revealjs/dag2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="identify-open-paths" class="slide level2">
+<h2>Identify Open Paths</h2>
+<p><a href="https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example">Heiss demonstrates</a> how to use {<code>dagitty</code>} package to test assumptions, list pathways, and identify the minimal adjustment sets.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">paths</span>(mosquito_dag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$paths
+ [1] "\"mosquito net\" -&gt; \"risk of malaria\""                                                                      
+ [2] "\"mosquito net\" &lt;- \"eligible for program\" &lt;- income -&gt; \"risk of malaria\""                                
+ [3] "\"mosquito net\" &lt;- \"eligible for program\" &lt;- income -&gt; health -&gt; \"risk of malaria\""                      
+ [4] "\"mosquito net\" &lt;- \"household size\" -&gt; \"eligible for program\" &lt;- income -&gt; \"risk of malaria\""          
+ [5] "\"mosquito net\" &lt;- \"household size\" -&gt; \"eligible for program\" &lt;- income -&gt; health -&gt; \"risk of malaria\""
+ [6] "\"mosquito net\" &lt;- \"nighttime temps\" -&gt; \"risk of malaria\""                                               
+ [7] "\"mosquito net\" &lt;- health -&gt; \"risk of malaria\""                                                            
+ [8] "\"mosquito net\" &lt;- health &lt;- income -&gt; \"risk of malaria\""                                                  
+ [9] "\"mosquito net\" &lt;- income -&gt; \"risk of malaria\""                                                            
+[10] "\"mosquito net\" &lt;- income -&gt; health -&gt; \"risk of malaria\""                                                  
+
+$open
+ [1]  TRUE  TRUE  TRUE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="identify-minimal-adjustment-set" class="slide level2">
+<h2>Identify Minimal Adjustment Set</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">adjustmentSets</span>(mosquito_dag)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>{ health, income, nighttime temps }</code></pre>
+</div>
+</div>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<p>This tells us that we only need to control for <code>health</code>, <code>income</code>, and <code>nighttime temps</code> to identify our causal effect of interest (<code>nets -&gt; malaria risk</code>). We see the same on <a href="http://dagitty.net/m1k_2Mk">DAGitty.net</a>.</p>
+</div><div class="column" style="width:40%;">
+<center>
+<img data-src="img/adjustmentset.png">
+</center>
+</div>
+</div>
+</section>
+<section id="section-29" class="slide level2" data-background-image="img/road less traveled 22.svg">
+<h2></h2>
+</section>
+<section id="simulated-data" class="slide level2">
+<h2>Simulated Data</h2>
+<p><a href="https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example">Heiss simulated data</a> from 1,752 households to show that mosquito nets cause a reduction in malaria risk of 10 points.</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,752 × 10
+      id net   net_num malaria_risk income health household eligible temperature
+   &lt;dbl&gt; &lt;lgl&gt;   &lt;dbl&gt;        &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;     &lt;dbl&gt; &lt;lgl&gt;          &lt;dbl&gt;
+ 1     1 TRUE        1           33    781     56         2 FALSE           21.1
+ 2     2 FALSE       0           42    974     57         4 FALSE           26.5
+ 3     3 FALSE       0           80    502     15         3 FALSE           25.6
+ 4     4 TRUE        1           34    671     20         5 TRUE            21.3
+ 5     5 FALSE       0           44    728     17         5 FALSE           19.2
+ 6     6 FALSE       0           25   1050     48         1 FALSE           25.3
+ 7     7 TRUE        1           19   1146     65         3 FALSE           27.4
+ 8     8 FALSE       0           35   1093     75         5 FALSE           29.8
+ 9     9 FALSE       0           32   1037     60         3 FALSE           27.6
+10    10 FALSE       0           40    828     36         3 FALSE           21.3
+# ℹ 1,742 more rows
+# ℹ 1 more variable: resistance &lt;dbl&gt;</code></pre>
+</div>
+</div>
+</section>
+<section id="naive-vs-adjusted" class="slide level2">
+<h2>Naive vs Adjusted</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Model</a></li><li><a href="#tabset-2-2">Results</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">library</span>(modelsummary)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">library</span>(gt)</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a>model_naive <span class="ot">&lt;-</span> <span class="fu">lm</span>(malaria_risk <span class="sc">~</span> net, <span class="at">data =</span> mosquito_nets)</span>
+<span id="cb7-5"><a href="#cb7-5"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a>model_adjusted <span class="ot">&lt;-</span> <span class="fu">lm</span>(malaria_risk <span class="sc">~</span> net <span class="sc">+</span> income <span class="sc">+</span> temperature <span class="sc">+</span> health,</span>
+<span id="cb7-7"><a href="#cb7-7"></a>                     <span class="at">data =</span> mosquito_nets)</span>
+<span id="cb7-8"><a href="#cb7-8"></a></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co"># Heiss's appropriate warning:</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="co"># Making confounding adjustments with linear regression will result in properly identified causal relationships only under very specific circumstances.</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="co"># See https://www.andrewheiss.com/research/chapters/heiss-causal-inference-2021/10-causal-inference.pdf</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="2023-06-28_eldoret_causal-inference_files/figure-revealjs/malaria2-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="recommended-reading" class="slide level2 nonincremental">
+<h2>Recommended Reading</h2>
+<ul>
+<li class="fragment">Scott Cunningham’s <a href="ghr.link/cun">“Causal Inference: The Mixtape”</a></li>
+<li class="fragment">Nick Huntington-Klein’s <a href="ghr.link/eff">“The Effect: An Introduction to Research Design and Causality”</a></li>
+<li class="fragment">Richard McElreath’s <a href="ghr.link/sre">“Statistical Rethinking”</a></li>
+<li class="fragment">Morgan and Winship’s <a href="ghr.link/mor">“Counterfactuals and Causal Inference: Methods and Principles for Social Research”</a></li>
+<li class="fragment">Hernán and Robins’, <a href="ghr.link/wha">“Causal Inference: What If”</a></li>
+<li class="fragment">Daniel Westreich’s, <a href="ghr.link/wes">“Epidemiology by Design”</a></li>
+</ul>
+</section>
+<section id="thursday-and-friday-1" class="slide level2">
+<h2>Thursday and Friday 🤝</h2>
+<p>Available for 1-on-1s or small group consultation. Sign-up for a slot at <a href="https://ghr.link/meeting-eld23">ghr.link/meeting-eld23</a></p>
+
+<img data-src="img/QR_meeting.png" class="r-stretch"></section>
+<section id="slides-and-code" class="slide level2">
+<h2>Slides and Code</h2>
+<p>Slides: https://ghr.link/ws-eld23-ci</p>
+<p>Code: https://github.com/ericpgreen/ghr_workshops</p>
 <div class="footer footer-default">
 
 </div>
