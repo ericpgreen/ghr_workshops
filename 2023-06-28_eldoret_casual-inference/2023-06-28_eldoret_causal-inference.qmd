@@ -18,6 +18,9 @@ format:
 
 ```{r, include=FALSE}
 library(countdown)
+
+# image slides
+# https://docs.google.com/presentation/d/1QrB7gPmjOm-lIvvHrG0J3DdVXLNAcOYH2zqcjaKlsTY/edit?usp=sharing
 ```
 
 ##  {background-image="img/FallMini2022-11.jpg"}
@@ -64,11 +67,16 @@ Does this mean that coffee prevents death? The study authors say no. But also, m
 
 Does this mean that coffee prevents death? The study authors say no. But also, maybe!
 
-[Step 1: Avoid the word “causal” and warn that correlation is not causation.]{style="color:rgba(178, 190, 181);"}
+[Step 1: Avoid the word "causal" and warn that correlation is not causation.]{style="color:rgba(178, 190, 181);"}
 
 **Step 2: Ignore the warning and make policy or health recommendations based on a causal interpretation of the findings.**
 
 > …coffee consumption can be incorporated into a healthy lifestyle…moderate consumption of coffee may confer health benefits in terms of reducing premature death.
+
+
+```{r}
+countdown(minutes = 1, seconds = 00, top = 0)
+```
 
 ## So which is it, a non-causal association or a causal effect? 
 
@@ -81,9 +89,10 @@ According to Hernán, the point is that we have to be clear about our scientific
 ## What is our goal? What do we want to know?
 <br>
 
-[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;"}
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;" .fragment}
 
-[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;"}
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;" .fragment}
+
 
 ## What is our goal? What do we want to know?
 <br>
@@ -120,28 +129,35 @@ A counterfactual is the hypothetical state of a "what if" question. With counter
 ## {background-image="img/road less traveled 1.svg"}
 ## {background-image="img/road less traveled 2.svg"}
 ## {background-image="img/road less traveled 3.svg"}
-
-## Avererage Treatment Effects
-
-We can't measure the causal impact of road choice for Robert as an individual (because we only observe one potential outcome), but we can compare groups of people like Robert who take one road or the other and estimate the average treatment effect, or ATE. 
-
-To see why this works, let's *pretend* that we know everyone's potential outcomes. 
+## {background-image="img/road less traveled 4.svg"}
 
 ## {background-image="img/po.png"}
 
 ## Back to Reality
 
-We're not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the road less traveled to people who take the road more traveled. But how do people come to take one road versus the other?
+We're not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the road less traveled to people who take the road more traveled. But how do people come to take one road versus the other? 
+
+
+```{r}
+countdown(minutes = 1, seconds = 00, bottom = 0)
+```
+
+## Who Gets "Treated"?
+
+Let's consider two scenarios:
+
+1. Travelers are **randomly assigned** to a road. They come to the fork in the road and pull directions out of a hat. 
+2. Travelers **select** a road themselves. They go with their gut and all happen to pick the road that maximizes their individual happiness. 
 
 ## {background-image="img/po2.png"}
 
 ## Randomization Neutralizes Selection Bias...
 
-Under perfect randomization, the estimated ATE 1.5 is equal to the true (but unknowable) ATE. But when travelers selected their own road, the estimate is 4.7. This does not line up with the true ATE because the estimate includes bias.
+The simple difference in outcomes between groups consists of the average treatment effect + bias. Under perfect randomization, there is no bias, so the difference in outcomes is just the ATE.
 
 ## ...But Randomization is Not Always Possible or Maintained
 
-Most research is non-experimental, or what many would call observational. Selection bias will always be with us. Our only defense against being fooled by selection bias is research design and statistical adjustment. As [Cunningham (2020)](https://mixtape.scunning.com/) states:
+Most research is non-experimental, or what many would call observational. Selection bias is always a concern in these studies. Our only defense against being fooled by selection bias is research design and statistical adjustment. As [Cunningham (2020)](https://mixtape.scunning.com/) states:
 
 > One could argue that the entire enterprise of causal inference is about developing a reasonable strategy for negating the role that selection bias is playing in estimated causal effects.
 
@@ -155,4 +171,49 @@ Most research is non-experimental, or what many would call observational. Select
 
 [^others]: You might also come across references to Bradford Hill's Considerations and the sufficient-component cause model.
 
-# [Causal Inference Methods]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+## ☕️ Coffee/tea break
+
+# [Causal Diagrams and Confounder Control]{style="color:white; font-size:150%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+
+## {background-image="img/road less traveled 5.svg"}
+
+## Data Are Dumb
+
+As Pearl and Mackenzie tell us in the [*Book of Why*](https://amzn.to/3CKyjnP), cofounder control is not just an exercise in statistics because data are profoundly dumb. A dataset cannot tell us which variables to adjust for, or what is a cause and what is an effect. For that we need information that lives outside of statistical models. We need causal models that are informed by domain expertise ([McElreath, 2020](https://amzn.to/3FdX2mk)).
+
+## DAG {background-image="img/dag example.svg" background-size="99%" background-color="white"}
+
+## {background-image="img/road less traveled 6.svg"}
+## {background-image="img/road less traveled 7.svg"}
+## {background-image="img/road less traveled 8.svg"}
+## {background-image="img/road less traveled 9.svg"}
+## {background-image="img/road less traveled 10.svg"}
+## {background-image="img/road less traveled 11.svg"}
+
+## {background-image="img/road less traveled 12.svg"}
+
+```{r}
+countdown(minutes = 2, seconds = 00, top = 0, left = 1)
+```
+
+## {background-image="img/road less traveled 13.svg"}
+
+## Effect Identification
+
+Next we need to determine which paths are good and which are bad ([Huntington-Klein, 2021](https://theeffectbook.net/)). "Good paths" identify our research question. "Bad paths" are the alternate explanations for the causal effect that we need to close. In our example DAG, as in many DAGS, good paths often start with an arrow exiting the proposed cause and bad paths have arrows entering the proposed cause.
+
+```{r}
+countdown(minutes = 1, seconds = 00, bottom = 0)
+```
+
+## {background-image="img/road dag paths.svg" background-size="99%" background-color="white"}
+
+## {background-image="img/road less traveled 14.svg"}
+## {background-image="img/road less traveled 15.svg"}
+## {background-image="img/road less traveled 16.svg"}
+
+## Simulated Example (ATE=1.5) {background-image="img/fig-confounding-1.png" background-size="99%" background-color="white"}
+
+## {background-image="img/road less traveled 17.svg"}
+## {background-image="img/road less traveled 18.svg"}
+
