@@ -1,0 +1,527 @@
+---
+title: "Causal Inference Workshop"
+subtitle: "Eldoret, June 2023"
+author:
+  - Eric Green
+format: 
+  revealjs:
+    multiplex: true
+    theme: [custom.scss]
+    slide-number: c/t
+    incremental: true
+    progress: true
+    title-slide-attributes:
+      data-background-image: img/title.png
+      data-background-size: contain
+      data-background-opacity: "1"
+---
+
+```{r}
+#| include: false
+
+library(countdown)
+
+# image slides
+# https://docs.google.com/presentation/d/1QrB7gPmjOm-lIvvHrG0J3DdVXLNAcOYH2zqcjaKlsTY/edit?usp=sharing
+```
+
+
+##  {background-image="img/FallMini2022-11.jpg"}
+
+## Today's Agenda
+
+::: columns
+::: {.column width="90%"}
+| Time        | Topic                             |
+|-------------|:----------------------------------|
+| 10:00-10:30 | The challenge of causal inference |
+| 10:30-11:00 | Confounder control and causal diagrams |
+| 11:00-11:10 | ☕️ Coffee/tea break               |
+| 11:10-12:00 | Malaria DAG                       |
+
+:::
+:::
+
+
+## Thursday and Friday 🤝
+
+Available for 1-on-1s or small group consultation. Sign-up for a slot at [ghr.link/meeting-eld23](https://ghr.link/meeting-eld23)
+
+![](img/QR_meeting.png)
+
+##  {background-image="img/coffee.png"}
+
+## Observational Findings
+
+[Ding et al. (2015)](https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.115.017341) conducted a pooled analysis of three large prospective cohort studies of health professionals in the U.S. (95% white) followed for up to 36 years:
+
+> Higher consumption of total coffee, caffeinated coffee, and decaffeinated coffee was associated with lower risk of total mortality…Relative to no consumption of coffee, the pooled hazard ratio for death was 0.95 (95% confidence interval [CI], 0.91–0.99) for 1.0 or less cup of total coffee per day.
+
+In other words, the sort of people who drink a cup of coffee daily have a 5% lower risk of dying over 2 to 3 decades. 
+
+## Causal Deniability
+
+Does this mean that coffee prevents death? The study authors say no. But also, maybe!
+
+**Step 1: Avoid the word "causal" and warn that correlation is not causation.**
+
+> …given the observational nature of the study design, we could not directly establish a cause-effect relationship between coffee and mortality.
+
+## Causal Deniability
+
+Does this mean that coffee prevents death? The study authors say no. But also, maybe!
+
+[Step 1: Avoid the word "causal" and warn that correlation is not causation.]{style="color:rgba(178, 190, 181);"}
+
+**Step 2: Ignore the warning and make policy or health recommendations based on a causal interpretation of the findings.**
+
+> …coffee consumption can be incorporated into a healthy lifestyle…moderate consumption of coffee may confer health benefits in terms of reducing premature death.
+
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 1, seconds = 00, top = 0)
+```
+
+
+## So which is it, a non-causal association or a causal effect? 
+
+[Hernán (2018)](https://ajph.aphapublications.org/doi/full/10.2105/AJPH.2018.304337) argues that scientists need to stop the charade:
+
+> We need to stop treating "causal" as a dirty word that respectable investigators do not say in public or put in print. It is true that observational studies cannot definitely prove causation, but this statement misses the point…
+
+According to Hernán, the point is that we have to be clear about our scientific goals and use language that reflects these goals. 
+
+## What is our goal? What do we want to know?
+<br>
+
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%;" .fragment}
+
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%;" .fragment}
+
+
+## What is our goal? What do we want to know?
+<br>
+
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%; color:rgba(178, 190, 181);"}
+
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
+
+## To answer this question we need causal inference
+<br>
+
+[A. Whether the sort of people who drink a cup of coffee daily have a lower risk of dying]{style="font-size:150%; color:rgba(178, 190, 181);"}
+
+[B. Whether drinking a cup of coffee daily lowers the risk of dying?]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
+
+
+# [Causal Inference]{style="color:white; font-size:200%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+
+## Causal Inference
+
+Causal inference is what we do when we identify and estimate the causal effect of some proposed cause on an outcome of interest.
+
+<center>
+![](img/causeeffect.png)
+</center>
+
+## Counterfactual Thinking
+
+[Causal inference is an exercise in counterfactual thinking, full of "what if" questions about the road not taken.]{style="font-size:150%; background-color:rgba(244, 186, 2);"}
+
+A counterfactual is the hypothetical state of a "what if" question. With counterfactual thinking, there is what actually happened, and then there is the hypothetical counterfactual of what would have happened, counter to fact, under the alternative scenario. The difference between what did happen and what would have happened is a known as the causal effect.
+
+## {background-image="img/road less traveled 0.svg"}
+## {background-image="img/road less traveled 1.svg"}
+## {background-image="img/road less traveled 2.svg"}
+## {background-image="img/road less traveled 3.svg"}
+## {background-image="img/road less traveled 4.svg"}
+
+## {background-image="img/po.png"}
+
+## Back to Reality
+
+We're not all knowing, of course, and we only get to observe one potential outcome for each person. This means we have to estimate the ATE by comparing people like Robert who take the road less traveled to people who take the road more traveled. But how do people come to take one road versus the other? 
+
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 1, seconds = 00, bottom = 0)
+```
+
+
+## Who Gets "Treated"?
+
+Let's consider two scenarios:
+
+1. Travelers are **randomly assigned** to a road. They come to the fork in the road and pull directions out of a hat. 
+2. Travelers **select** a road themselves. They go with their gut and all happen to pick the road that maximizes their individual happiness. 
+
+## {background-image="img/po2.png"}
+
+## Randomization Neutralizes Selection Bias...
+
+The simple difference in outcomes between groups consists of the average treatment effect + bias. Under perfect randomization, there is no bias, so the difference in outcomes is just the ATE.
+
+## ...But Randomization is Not Always Possible or Maintained
+
+Most research is non-experimental, or what many would call observational. Selection bias is always a concern in these studies. Our only defense against being fooled by selection bias is research design and statistical adjustment. As [Cunningham (2020)](https://mixtape.scunning.com/) states:
+
+> One could argue that the entire enterprise of causal inference is about developing a reasonable strategy for negating the role that selection bias is playing in estimated causal effects.
+
+## Causal Inference Methods
+
+[Matthay et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/31890846/) divide non-experimental approaches to causal inference into two main buckets: confounder-control and instrument-based.[^others] 
+
+**Confounder-control** is characterized by the use of statistical adjustment to make groups more comparable.
+
+**Instrument-based studies**, sometimes called **quasi-experimental designs**, estimate treatment effects by finding and leveraging arbitrary reasons why some people are more likely to be treated or exposed.
+
+[^others]: You might also come across references to Bradford Hill's Considerations and the sufficient-component cause model.
+
+# [Causal Diagrams and Confounder Control]{style="color:white; font-size:150%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+
+## {background-image="img/road less traveled 5.svg"}
+
+## Data Are Dumb
+
+As Pearl and Mackenzie tell us in the [*Book of Why*](https://amzn.to/3CKyjnP), cofounder control is not just an exercise in statistics because data are profoundly dumb. A dataset cannot tell us which variables to adjust for, or what is a cause and what is an effect. For that we need information that lives outside of statistical models. We need causal models that are informed by domain expertise ([McElreath, 2020](https://amzn.to/3FdX2mk)).
+
+## DAG {background-image="img/dag example.svg" background-size="99%" background-color="white"}
+
+## {background-image="img/road less traveled 6.svg"}
+## {background-image="img/road less traveled 7.svg"}
+## {background-image="img/road less traveled 8.svg"}
+## {background-image="img/road less traveled 9.svg"}
+## {background-image="img/road less traveled 10.svg"}
+## {background-image="img/road less traveled 11.svg"}
+
+## {background-image="img/road less traveled 12.svg"}
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 2, seconds = 00, top = 0, left = 1)
+```
+
+
+## {background-image="img/road less traveled 13.svg"}
+
+## Effect Identification
+
+Next we need to determine which paths are good and which are bad ([Huntington-Klein, 2021](https://theeffectbook.net/)). "Good paths" identify our research question. "Bad paths" are the alternate explanations for the causal effect that we need to close. In our example DAG, as in many DAGS, good paths often start with an arrow exiting the proposed cause and bad paths have arrows entering the proposed cause.
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 1, seconds = 00, bottom = 0)
+```
+
+
+## {background-image="img/road dag paths.svg" background-size="99%" background-color="white"}
+
+## {background-image="img/road less traveled 14.svg"}
+## {background-image="img/road less traveled 15.svg"}
+## {background-image="img/road less traveled 16.svg"}
+
+## Simulated Example (ATE=1.5) {background-image="img/fig-confounding-1.png" background-size="99%" background-color="white"}
+
+## {background-image="img/road less traveled 17.svg"}
+## {background-image="img/road less traveled 18.svg"}
+
+## ☕️ Coffee/tea break
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 10, seconds = 00, bottom = 0)
+```
+
+
+# [Malaria Example]{style="color:white; font-size:150%;"} {background="linear-gradient(0deg, #00529b, #1f9ac9)"}
+
+## Draw a DAG with a Partner
+
+The research question is: 
+
+[Does using a mosquito net decrease an individual's risk of contracting malaria?]{style="font-size:150%; background-color:rgba(244, 186, 2);"} 
+
+Imagine that you can collect data on environmental factors, individual health, and household characteristics, but you cannot randomly assign households to receive or use mosquito nets. You have to answer this question with an observational study.[^ex]
+
+What is in your DAG?
+
+[^ex]: This really nice example comes from [Andrew Heiss](https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example). 
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3, seconds = 00, bottom = 0)
+```
+
+
+## {background-image="img/road less traveled 19.svg"}
+## {background-image="img/road less traveled 20.svg"}
+## {background-image="img/road less traveled 21.svg"}
+
+## List the Pathways {background-color="white"}
+
+
+:::: {.columns}
+
+::: {.column width="60%"}
+<center>
+![](img/malariadag.png)
+</center>
+:::
+
+::: {.column width="40%"}
+There is a direct path between mosquito net use and the risk of malaria, but the effect is not causally identified due to several other open paths. List all of the paths and find which open paths have arrows pointing backwards into the mosquito net node.
+:::
+
+::::
+
+
+```{r}
+#| echo: false
+
+countdown(minutes = 3, seconds = 00, top = 0)
+```
+
+
+## Two Shortcuts
+
+Drawing DAGs by hand is a good learning exercise, but there is an easier way:
+
+1. Draw your DAG on [DAGitty.net](http://dagitty.net/m1k_2Mk)
+2. Copy the code
+3. Paste the code into R
+4. In R use the {`dagitty`} package to analyze your DAG
+
+## {background-image="img/dagitty.png"}
+
+## {background-iframe="http://dagitty.net/m1k_2Mk"}
+
+## Paste Code into R
+
+::: {.panel-tabset}
+
+### Code
+
+
+```{r}
+#| label: dag1
+#| echo: true
+#| eval: false
+
+# Load packages
+library(dagitty)   
+
+# 'content between quotes' pasted from DAGitty.net
+mosquito_dag <- dagitty('dag {
+  bb="0,0,1,1"
+  "eligible for program" [pos="0.303,0.552"]
+  "household size" [pos="0.222,0.393"]
+  "insecticide resistance" [pos="0.623,0.251"]
+  "mosquito net" [exposure,pos="0.338,0.393"]
+  "nighttime temps" [pos="0.471,0.273"]
+  "risk of malaria" [outcome,pos="0.616,0.396"]
+  health [pos="0.469,0.493"]
+  income [pos="0.473,0.697"]
+  "eligible for program" -> "mosquito net"
+  "household size" -> "eligible for program"
+  "household size" -> "mosquito net"
+  "insecticide resistance" -> "risk of malaria"
+  "mosquito net" -> "risk of malaria"
+  "nighttime temps" -> "mosquito net"
+  "nighttime temps" -> "risk of malaria"
+  health -> "mosquito net"
+  health -> "risk of malaria"
+  income -> "eligible for program"
+  income -> "mosquito net"
+  income -> "risk of malaria"
+  income -> health
+  }'
+)
+
+plot(mosquito_dag)
+```
+
+
+### Plot
+
+
+```{r}
+#| label: dag2
+#| echo: false
+#| ref.label: "dag1"
+```
+
+
+:::
+
+## Identify Open Paths
+
+[Heiss demonstrates](https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example) how to use {`dagitty`} package to test assumptions, list pathways, and identify the minimal adjustment sets.
+
+
+```{r}
+#| label: paths
+#| echo: true
+#| eval: true
+
+paths(mosquito_dag)
+```
+
+
+## Identify Minimal Adjustment Set
+<br>
+
+
+```{r}
+#| label: adjustment
+#| echo: true
+#| eval: true
+
+adjustmentSets(mosquito_dag)
+```
+
+
+<br>
+
+:::: {.columns}
+
+::: {.column width="60%"}
+
+This tells us that we only need to control for `health`, `income`, and `nighttime temps` to identify our causal effect of interest (`nets -> malaria risk`). We see the same on [DAGitty.net](http://dagitty.net/m1k_2Mk).
+:::
+
+::: {.column width="40%"}
+<center>
+![](img/adjustmentset.png)
+</center>
+:::
+
+::::
+
+## {background-image="img/road less traveled 22.svg"}
+
+## Simulated Data
+
+[Heiss simulated data](https://evalf22.classes.andrewheiss.com/example/dags.html#mosquito-net-example) from 1,752 households to show that mosquito nets cause a reduction in malaria risk of 10 points.
+
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+  
+  library(tidyverse)
+  mosquito_nets <- read_csv("mosquito_nets.csv")
+  mosquito_nets
+```
+
+
+## Naive vs Adjusted
+
+::: {.panel-tabset}
+
+### Model
+
+
+```{r}
+#| label: malaria1
+#| echo: true
+#| eval: true
+#| results: hide
+
+library(modelsummary)
+library(gt)
+
+model_naive <- lm(malaria_risk ~ net, data = mosquito_nets)
+
+model_adjusted <- lm(malaria_risk ~ net + income + temperature + health,
+                     data = mosquito_nets)
+
+# Heiss's appropriate warning:
+# Making confounding adjustments with linear regression will result in properly identified causal relationships only under very specific circumstances.
+# See https://www.andrewheiss.com/research/chapters/heiss-causal-inference-2021/10-causal-inference.pdf
+```
+
+
+### Results
+
+
+```{r}
+#| label: malaria2
+#| echo: false
+
+list(
+  "naive" = model_naive,
+  "adjusted" = model_adjusted
+) %>%
+  modelplot(draw = FALSE, coef_omit = 'Interc|income|temperature|health') %>%
+  ggplot(aes(
+      y = term, x = estimate,
+      xmin = conf.low, xmax = conf.high,
+      color = model,
+      label = model)) +
+    geom_point(aes(y = term,
+                   x = estimate), 
+               position = position_dodge(width = 0.5),
+               size=2) +
+    geom_pointrange(aes(y = term,
+                        x = estimate, xmin = conf.low, xmax = conf.high, 
+                        color = model), position = position_dodge(width = 0.5),
+                    size=2) +
+    geom_label(hjust="center", vjust=-1,
+               position = position_dodge(width = 0.5),
+               size=6) +
+    geom_vline(xintercept = -10) +
+    xlim(-20, 0) +
+    annotate("text", x = -10, y = 1, 
+             label = "Simulated effect",
+             hjust = -0.05,
+             size=8) + 
+    theme_minimal(base_size = 23) +
+    theme(legend.position = "none",
+          axis.text.y = element_blank(),
+          plot.title = element_text(face="bold"),
+          panel.background = element_rect(fill="#fcfbf9"),
+          plot.background = element_rect(fill="#fcfbf9",
+                                          color=NA)) +
+    labs(title = "The naive estimate fails to recover the effect",
+         subtitle = "Simulated ATE: -10",
+         x = "Effect on malaria risk: Estimated ATE and 95% confidence intervals",
+         y = NULL)
+```
+
+
+:::
+
+
+## Recommended Reading {.nonincremental}
+
+- Scott Cunningham's ["Causal Inference: The Mixtape"](ghr.link/cun)
+- Nick Huntington-Klein's ["The Effect: An Introduction to Research Design and Causality"](ghr.link/eff)
+- Richard McElreath's ["Statistical Rethinking"](ghr.link/sre)
+- Morgan and Winship's ["Counterfactuals and Causal Inference: Methods and Principles for Social Research"](ghr.link/mor)
+- Hernán and Robins', ["Causal Inference: What If"](ghr.link/wha)
+- Daniel Westreich's, ["Epidemiology by Design"](ghr.link/wes)
+- [My chapter](https://ghr.link/ci)
+
+## Slides and Code
+
+Available for 1-on-1s or small group consultation June 29-30. Sign-up for a slot at [ghr.link/meeting-eld23](https://ghr.link/meeting-eld23)
+
+Slides: [ghr.link/ws-eld23-ci](https://ghr.link/ws-eld23-ci)
+
+Code: [https://github.com/ericpgreen/ghr_workshops](https://github.com/ericpgreen/ghr_workshops)
+
