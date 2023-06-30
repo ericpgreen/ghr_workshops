@@ -477,8 +477,13 @@ list(
 
 :::
 
+## Next Steps {.nonincremental}
 
-## Recommended Reading {.nonincremental}
+- [Read](https://evalf22.classes.andrewheiss.com/example/dags.html#conditional-independencies) about how to test implications of your DAG 
+- [Read](https://theeffectbook.net/ch-CausalPaths.html#using-paths-to-test-your-diagram) more on placebo tests
+- [Read](https://www.andrewheiss.com/blog/2020/02/25/closing-backdoors-dags/) about other (better) ways for closing back doors
+
+## Other Recommended Reading {.nonincremental}
 
 - Scott Cunningham's ["Causal Inference: The Mixtape"](ghr.link/cun)
 - Nick Huntington-Klein's ["The Effect: An Introduction to Research Design and Causality"](ghr.link/eff)
